@@ -1,10 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  @apply box-border;
-}
 
-body {
-  @apply font-normal text-left text-sm relative text-gray-700;
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #265e78;
+    --color-light: #5a8c9c;
+    --color-dark: #3a6c7c;
+
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-off-white: #f8f9fa;
+    --color-light-gray: #e9ecef;
+    --color-gray: #6c757d;
+    --color-dark-gray: #495057;
+
+    /* Text Colors */
+    --color-text-primary: #1a2332;
+    --color-text-secondary: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.8);
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans text-left text-base relative antialiased;
+    background-color: var(--color-primary);
+    color: var(--color-text-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
