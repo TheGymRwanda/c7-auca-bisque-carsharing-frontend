@@ -7,7 +7,7 @@ function Home() {
         <div>
           <img src={positiv} />
         </div>
-        <p className="mt-8 sm:mt-10 md:mt-12 text-center text-xs sm:text-2xl md:text-3xl max-w-xl px-2">
+        <p className="mt-8 sm:mt-10 md:mt-12 text-center  sm:text-2xl md:text-3xl max-w-xl px-2">
           Hello Manuela!
           <br />
           What are you up to today?
