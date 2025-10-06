@@ -11,7 +11,7 @@ export default function HeadingWithNav({
   return (
     <div className="flex w-full items-center justify-between">
       {showBack ? <ChevronBackIcon className="size-5" /> : null}
-      <h3 className="grow text-center font-lora text-[30px] italic">{title}</h3>
+      <h3 className="grow text-center font-lora text-[30px] uppercase">{title}</h3>
     </div>
   )
 }

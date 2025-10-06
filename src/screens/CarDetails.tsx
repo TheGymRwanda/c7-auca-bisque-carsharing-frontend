@@ -2,9 +2,10 @@ import { ReactElement } from 'react'
 import HeadingWithNav from '../components/HeadingWithNav'
 import ProfileIcon from '../assets/ProfileIcon'
 import CarIcon from '../assets/CarIcon'
-import ListIcon from '../assets/ListIcon'
 import HorseIcon from '../assets/HorseIcon'
 import FuelIcon from '../assets/FuelIcon'
+import MenuIcon from '../assets/MenuIcon'
+import RedFlagIcon from '../assets/RedFlagIcon'
 
 interface CarDetailsData {
   id: number
@@ -53,7 +54,7 @@ export default function CarDetails({ carId = 24 }: { carId: number }): ReactElem
             <span>{carDetails.info}</span>
           </li>
           <li className="flex gap-2">
-            <ListIcon />
+            <MenuIcon />
             <span>{carDetails.licensePlate}</span>
           </li>
           <li className="flex gap-2">
@@ -62,11 +63,11 @@ export default function CarDetails({ carId = 24 }: { carId: number }): ReactElem
           </li>
           <li className="flex gap-2">
             <FuelIcon />
-            <span>{carDetails.fuelType}P</span>
+            <span>{carDetails.fuelType}</span>
           </li>
           <li className="flex gap-2">
-            <CarIcon />
-            <span>{carDetails.state}P</span>
+            <RedFlagIcon />
+            <span>{carDetails.state}</span>
           </li>
         </ul>
       </div>
