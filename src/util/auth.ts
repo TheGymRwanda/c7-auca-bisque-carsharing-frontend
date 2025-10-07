@@ -1,3 +1,3 @@
 export function getAuthToken(): string | null {
-  return localStorage.getItem('token')
+  return import.meta.env.VITE_ACCESS_TOKEN
 }
