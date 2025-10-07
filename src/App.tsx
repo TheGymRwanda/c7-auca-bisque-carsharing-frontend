@@ -11,7 +11,7 @@ configure({
 })
 
 function App(): ReactElement {
-  return <CarDetails carId={24} />
+  return <CarDetails carId={1} />
 }
 
 export default App
