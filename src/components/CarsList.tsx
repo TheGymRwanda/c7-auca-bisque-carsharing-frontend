@@ -54,7 +54,7 @@ function CarsList() {
                   <img src={car.image} alt={car.name} className="size-full object-contain" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-1 text-2xl font-bold leading-tight">{car.name}</h3>
+                  <h3 className="mb-2 text-2xl font-bold leading-tight">{car.name}</h3>
                   <div className="mt-1 space-y-1.5 text-base">
                     <div className="flex items-center gap-2">
                       <svg
