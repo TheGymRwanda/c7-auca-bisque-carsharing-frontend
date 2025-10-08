@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import BookCar from './components/BookCar'
 import SeeMyCar from './components/SeeMyCar'
 import Bookings from './components/Bookings'
+import CarList from './components/CarsList'
 
 // Configure axios hooks
 // Do not delete this if you want to use the provided API hooks in `src/hooks`
@@ -27,6 +28,8 @@ function App(): ReactElement {
           </Route>
         </Routes>
       </BrowserRouter>
+   
+      <CarList />
     </main>
   )
 }
