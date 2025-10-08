@@ -1,6 +1,10 @@
 import { ReactElement } from 'react'
 import { configure } from 'axios-hooks'
 import Home from './components/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import BookCar from './components/BookCar'
+import SeeMyCar from './components/SeeMyCar'
+import Bookings from './components/Bookings'
 
 // Configure axios hooks
 // Do not delete this if you want to use the provided API hooks in `src/hooks`
@@ -13,7 +17,16 @@ configure({
 function App(): ReactElement {
   return (
     <main className="mx-auto flex min-h-screen w-1/3 flex-col gap-8 py-10">
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route>
+            <Route path="Home" element={<Home />} />
+            <Route path="bookcar" element={<BookCar />} />
+            <Route path="seemycar" element={<SeeMyCar />} />
+            <Route path="bookings" element={<Bookings />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </main>
   )
 }
