@@ -1,7 +1,7 @@
 //import React from 'react'
 
-function SeeMyCar() {
+function CarDetails() {
   return <div>SeeMyCar</div>
 }
 
-export default SeeMyCar
+export default CarDetails
