@@ -26,8 +26,8 @@ function Home() {
         <h1 className="flex items-center justify-center place-self-center p-5 text-3xl">or</h1>
 
         <Link
-          to="/seemycar"
-          className="flex h-12 w-full border-spacing-10 items-center justify-center rounded-3xl border px-6 text-center text-lg font-bold text-white transition-colors duration-300 hover:bg-white hover:text-[var(--color-primary)]"
+          to="/CarDetails"
+          className="flex justify-center items-center w-full h-12 px-6 rounded-3xl border border-spacing-10 text-white font-bold text-lg text-center hover:bg-white hover:text-[var(--color-primary)] transition-colors duration-300"
         >
           See My Car
         </Link>
