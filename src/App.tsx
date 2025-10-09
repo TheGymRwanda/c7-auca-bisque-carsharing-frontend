@@ -28,7 +28,7 @@ function App(): ReactElement {
           </Route>
         </Routes>
       </BrowserRouter>
-   
+
       <CarList />
     </main>
   )
