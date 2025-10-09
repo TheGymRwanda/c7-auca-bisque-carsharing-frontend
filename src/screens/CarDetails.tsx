@@ -10,34 +10,34 @@ import { useCar, useCarType } from '../hooks'
 import { apiUrl } from '../util/apiUrl'
 import { getAuthToken } from '../util/auth'
 
-async function getCarOwner(ownerId: number | string) {
-  return fetch(`${apiUrl}/users/${ownerId}`, {
+async function getCarOwner(ownerId: number | string): Promise<string> {
+  const response = await fetch(`${apiUrl}/users/${ownerId}`, {
     headers: { Authorization: `Bearer ${getAuthToken()}` },
   })
-    .then(res => {
-      if (res.status === 200) {
-        return res.json()
-      }
-    })
-    .then(data => {
-      if (data) return data.name
-      return ''
-    })
+  if (response.status === 200) {
+    const data = await response.json()
+    return data.name
+  }
+  return ''
 }
 
 export default function CarDetails({ carId = 1 }: { carId: number }): ReactElement {
   const [ownerName, setOwnerName] = useState<string>('')
   const [ownerLoading, setOwnerLoading] = useState<boolean>(true)
-  const [, forceMount] = useState<number>(0)
   const [{ data: carDetails, loading: carLoading }] = useCar(carId)
   const [{ data: carType, loading: carTypeLoading }] = useCarType(carId)
 
   // fetch owner only when the carDetails is ready
   useEffect(() => {
-    if (!carDetails?.ownerId) return
-    getCarOwner(carDetails.ownerId)
-      .then(setOwnerName)
-      .then(() => setOwnerLoading(false))
+    const fetchOwner = async () => {
+      if (carDetails?.ownerId) {
+        setOwnerLoading(true)
+        const ownerName = await getCarOwner(carDetails.ownerId)
+        setOwnerName(ownerName)
+      }
+      setOwnerLoading(false)
+    }
+    fetchOwner()
   }, [carDetails])
 
   return !carLoading && !ownerLoading && !carTypeLoading && carDetails && carType && ownerName ? (
@@ -89,8 +89,11 @@ export default function CarDetails({ carId = 1 }: { carId: number }): ReactEleme
     <div className="flex h-screen flex-col items-center justify-center">Loading</div>
   ) : (
     <div className="flex h-screen flex-col items-center justify-center">
-      <span>Error</span>
-      <button onClick={() => forceMount(prev => prev + 1)}>Retry</button>
+      <span className="px-10 text-center">
+        <strong className="text-4xl">Error</strong>
+        <br />
+        Check your internet connection and check if you&apos;re logged in
+      </span>
     </div>
   )
 }
