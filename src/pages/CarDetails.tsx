@@ -41,7 +41,7 @@ export default function CarDetails({ carId = 1 }: { carId: number }): ReactEleme
   }, [carDetails])
 
   return !carLoading && !ownerLoading && !carTypeLoading && carDetails && carType && ownerName ? (
-    <div className="py-10 px-5">
+    <div className="px-5 py-10">
       <HeadingWithNav title="Details" />
       <div className="flex h-[45vh] w-full justify-center">
         <img src={carType.imageUrl} alt={carDetails.info} />
