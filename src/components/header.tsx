@@ -11,9 +11,9 @@ const Header = () => {
       <div className="mx-auto flex h-full items-center justify-between px-4 ">
         {/* Logo section */}
         <div className="flex w-full items-center justify-center sm:w-auto sm:justify-start ">
-          <div className=" flex h-24 w-24 items-center  justify-center rounded-full bg-[#111827] sm:h-32 sm:w-32 ">
+          <div className=" flex size-24 items-center justify-center  rounded-full bg-[#111827] sm:size-32 ">
             {/* <Link to="/"> */}
-            <Logo className=" h-12 w-12 sm:h-24 sm:w-16 sm:pt-8" />
+            <Logo className=" size-12 sm:h-24 sm:w-16 sm:pt-8" />
             {/* </Link> */}
           </div>
         </div>
