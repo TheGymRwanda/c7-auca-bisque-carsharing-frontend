@@ -87,7 +87,7 @@ export default function LoginPage(): ReactElement {
                 setIsLoggingIn(true)
                 const passwordInputField = passwordRef.current
                 if (passwordInputField === null) return
-                const emailInputField = passwordRef.current
+                const emailInputField = emailRef.current
                 if (emailInputField === null) return
                 const success = await useAuth(emailInputField.value, passwordInputField.value)
                 setIsLoggingIn(false)

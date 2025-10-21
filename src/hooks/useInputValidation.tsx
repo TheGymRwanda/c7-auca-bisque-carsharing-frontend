@@ -49,7 +49,7 @@ export default function useInputValidation({
     }
 
     if (passwordRef.current) {
-      const inputField = emailRef.current
+      const inputField = passwordRef.current
       if (inputField === null) return
       passwordRef.current.oninput = () => validateInput(inputField, PASSWORD_LENGTH)
       passwordRef.current.onchange = () => validateInput(inputField, PASSWORD_LENGTH, true)
