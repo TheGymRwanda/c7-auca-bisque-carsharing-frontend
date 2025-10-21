@@ -3,5 +3,6 @@ export function getAuthToken(): string | null {
 }
 
 export function setAuthToken(token: string): void {
+  if (!token) return
   localStorage.setItem('token', token)
 }

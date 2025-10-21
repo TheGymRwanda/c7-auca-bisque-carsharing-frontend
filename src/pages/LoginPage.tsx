@@ -28,7 +28,7 @@ export default function LoginPage(): ReactElement {
       setIsCheckingLogin(false)
       return data !== null
     }
-    checkAuth().then(res => res && navigate('/home'))
+    checkAuth().then(res => res && navigate('/home', { replace: true }))
   }, [])
 
   const { isUserValid, isPasswordValid } = useInputValidation({
@@ -91,7 +91,7 @@ export default function LoginPage(): ReactElement {
                 if (emailInputField === null) return
                 const success = await useAuth(emailInputField.value, passwordInputField.value)
                 setIsLoggingIn(false)
-                if (success) navigate('home')
+                if (success) navigate('home', { replace: true })
                 else setIsLoginFailed(true)
               }}
             />
