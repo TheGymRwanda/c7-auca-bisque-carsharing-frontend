@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import CarIcon from '../assets/CarIcon'
 import ListIcon from '../assets/ListIcon'
 import CarsIcon from '../assets/CarsIcon'
@@ -5,9 +6,9 @@ import CarPlusIcon from '../assets/CarPlusIcon'
 import LogoutIcon from '../assets/LogoutIcon'
 import CalendarIcon from '../assets/CalendarIcon'
 
-function MobileNav() {
+export default function MobileNav(): ReactElement {
   return (
-    <div className="fixed z-50 ml-5 mt-8 w-[210px]  rounded-[8px] bg-[var(--color-light)] px-[24px] py-[16px]">
+    <div className="w-[210px] rounded-[8px]  bg-[var(--color-light)] px-[24px] py-[16px]">
       <ul className="flex flex-col gap-[16px] font-inter text-[14px]">
         <li className="flex cursor-pointer gap-[12px]">
           <CarIcon className="text-[var(--color-white)]" />
@@ -40,5 +41,3 @@ function MobileNav() {
     </div>
   )
 }
-
-export default MobileNav

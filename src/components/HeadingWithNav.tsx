@@ -1,6 +1,5 @@
 import { ReactElement } from 'react'
 import { ChevronBackIcon } from '../assets/ChevronBackIcon'
-import { Link } from 'react-router-dom'
 
 export default function HeadingWithNav({
   title,
@@ -11,11 +10,7 @@ export default function HeadingWithNav({
 }): ReactElement {
   return (
     <div className="flex w-full items-center justify-between">
-      {showBack ? (
-        <Link to="/car-list">
-          <ChevronBackIcon className="size-5" />
-        </Link>
-      ) : null}
+      {showBack ? <ChevronBackIcon className="size-5" /> : null}
       <h3 className="grow text-center font-lora text-[30px] uppercase">{title}</h3>
     </div>
   )
