@@ -5,7 +5,7 @@ type SmallButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
   type?: 'button' | 'submit' | 'reset'
-  variant?: 'primary' | 'secondary' // for Add (filled) or Cancel (outlined)
+  variant?: 'primary' | 'secondary'
 }
 
 const SmallButton: React.FC<SmallButtonProps> = ({
@@ -28,22 +28,5 @@ const SmallButton: React.FC<SmallButtonProps> = ({
     </button>
   )
 }
-
-/*
-  ===== Example Usage =====
-
-  <div className="mt-6 flex justify-between">
-    <SmallButton
-      label="Cancel"
-      variant="secondary"
-      onClick={() => navigate(-1)}
-    />
-    <SmallButton
-      label="Add Car"
-      type="submit"
-      variant="primary"
-    />
-  </div>
-*/
 
 export default SmallButton
