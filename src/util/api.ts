@@ -3,6 +3,11 @@ interface UserDto {
   name: string
 }
 
+interface UserAuth {
+  userId: number
+  token: string
+}
+
 interface CarTypeDto {
   id: number
   name: string
@@ -88,5 +93,6 @@ export type {
   NewBookingDto,
   ChangeBookingStateDto,
   ChangeCarStateDto,
+  UserAuth,
 }
 export { BookingState, CarState }
