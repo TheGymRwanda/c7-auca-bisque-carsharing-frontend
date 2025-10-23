@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom'
-import positiv from '../assets/positiv.png'
 
 function Home() {
   return (
     <div className="p-4">
       <div className="flex flex-col items-center">
-        <div>
-          <img src={positiv} alt="Positive illustration" />
-        </div>
         <p className="mt-8 max-w-xl px-2 text-center font-lora sm:mt-10 sm:text-lg md:mt-12 md:text-3xl">
           Hello Manuela!
           <br />
