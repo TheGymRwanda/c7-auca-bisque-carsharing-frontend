@@ -10,6 +10,10 @@ const Header = () => {
 
   const [showMenu, setShowMenu] = useState(false)
 
+  const closeMenu = () => {
+    setShowMenu(false)
+  }
+
   return (
     <>
       <header className="flex h-16 flex-row justify-between rounded-b-xl bg-[#111827] p-4">
@@ -22,13 +26,13 @@ const Header = () => {
           </button>{' '}
         </div>
         <div className="fixed left-1/2 top-4 z-50 -translate-x-1/2 rounded-full bg-[#111827] p-3">
-          <Link to="/" className="">
+          <Link to="/Home" className="">
             {<Logo />}
           </Link>
         </div>
         <div>{!isLoginPage && <ProfileIcon />}</div>
       </header>
-      <div>{showMenu && <MobileNav />}</div>
+      <div>{showMenu && <MobileNav onItemClick={closeMenu} />}</div>
     </>
   )
 }
