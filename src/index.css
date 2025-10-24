@@ -8,7 +8,7 @@
   :root {
     /* Primary Colors */
     --color-primary: #265e78;
-    --color-light: #5a8c9c;
+    --color-light: #64a1c0;
     --color-dark: #3a6c7c;
 
     /* Neutral Colors */
@@ -38,5 +38,9 @@
     color: var(--color-text-secondary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .heading-text {
+    @apply mt-8 max-w-xl text-2xl text-center font-lora sm:mt-10 sm:text-lg md:mt-12 md:text-3xl;
   }
 }
