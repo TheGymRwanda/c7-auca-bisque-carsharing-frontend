@@ -4,7 +4,7 @@ import CarsIcon from '../assets/CarsIcon'
 import CarPlusIcon from '../assets/CarPlusIcon'
 import LogoutIcon from '../assets/LogoutIcon'
 import CalendarIcon from '../assets/CalendarIcon'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface MobileNavPros {
   onItemClick: () => void
@@ -13,6 +13,13 @@ interface MobileNavPros {
 function MobileNav({ onItemClick }: MobileNavPros) {
   const handleClick = () => {
     onItemClick()
+  }
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    onItemClick()
+    navigate('/', { replace: true })
   }
 
   return (
@@ -41,7 +48,7 @@ function MobileNav({ onItemClick }: MobileNavPros) {
           <span className="font-[400]">Add New Car</span>
         </li>
         <hr className="border-t-[1.5px]" />
-        <Link to="/" onClick={handleClick}>
+        <Link to="/" onClick={handleLogout}>
           <li className="flex cursor-pointer gap-[12px]">
             <LogoutIcon />
             <span className="font-[400]">Log Out</span>
